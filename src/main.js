@@ -1,18 +1,32 @@
 import { createApp } from 'vue';
-import { createRouter, createHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 import App from './App.vue';
 import TeamsList from "@/components/teams/TeamsList";
 import UsersList from "@/components/users/UsersList";
 
 const app = createApp(App);
+
+const routes = [
+    {
+        path: '/team',
+        name: 'TeamsList',
+        component: TeamsList
+    },
+    {
+        path: '/users',
+        name: 'UsersList',
+        component: UsersList
+    }
+]
+
 const router = createRouter({
-    history: createHistory(),
-    routes: [
-        {path: '/team', component: TeamsList},
-        {path: '/users', component: UsersList}
-    ]
+    history: createWebHistory(),
+    routes,
 })
 
 app.use(router);
 app.mount('#app');
+
+
+export default router;
