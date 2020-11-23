@@ -7,3 +7,6 @@ composer.phar
 
 # node-modoules
 node_modules/
+
+# idea
+.idea/
