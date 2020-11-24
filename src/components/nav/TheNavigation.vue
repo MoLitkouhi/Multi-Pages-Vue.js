@@ -9,7 +9,7 @@
         <li>
 <!--          <button @click="setActivePage('users-list')">Users</button>-->
           <router-link to="/users">Users </router-link>
-        </li>
+        </li>        
       </ul>
     </nav>
   </header>

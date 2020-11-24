@@ -1,6 +1,7 @@
 <template>
   <the-navigation></the-navigation>
   <main>
+    <button @click="goTo">BaseChannel</button>
 <!--    <component :is="activePage"></component>-->
     <router-view></router-view>
   </main>
@@ -40,11 +41,16 @@ export default {
       users: this.users,
     };
   },
-  // methods: {
+  methods: {
+    goTo() {
+      this.$router.push('/users');
+    }
+  
+
   //   setActivePage(page) {
   //     this.activePage = page;
   //   },
-  // },
+  },
 };
 </script>
 
