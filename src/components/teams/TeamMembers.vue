@@ -16,16 +16,17 @@
 import UserItem from '../users/UserItem.vue';
 
 export default {
+  inject: ['users', 'teams'],
   components: {
     UserItem
   },
   data() {
     return {
-      teamName: 'Test',
-      members: [
-        { id: 'u1', fullName: 'Max Schwarz', role: 'Engineer' },
-        { id: 'u2', fullName: 'Max Schwarz', role: 'Engineer' },
-      ],
+      // teamName: 'Test',
+      // members: [
+      //   { id: 'u1', fullName: 'Max Schwarz', role: 'Engineer' },
+      //   { id: 'u2', fullName: 'Max Schwarz', role: 'Engineer' },
+      // ],
     };
   },
 };
