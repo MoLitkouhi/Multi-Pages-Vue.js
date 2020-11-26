@@ -4,6 +4,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue';
 import TeamsList from "@/components/teams/TeamsList";
 import UsersList from "@/components/users/UsersList";
+import TeamMembers from "@/components/teams/TeamMembers";
+
 
 const app = createApp(App);
 
@@ -17,6 +19,11 @@ const routes = [
         path: '/users',
         name: 'UsersList',
         component: UsersList
+    },
+    {
+        path: '/team/:teamId',
+        name: 'TeamMembers',
+        component: TeamMembers
     }
 ]
 
@@ -30,4 +37,4 @@ app.use(router);
 app.mount('#app');
 
 
-export default router;
+export default router; 
