@@ -1,4 +1,4 @@
-<template>
+ <template>
   <section>
     <h2>{{ teamName }}</h2>
     <ul>
@@ -22,6 +22,9 @@ export default {
   },
   data() {
     return {
+
+      teamName: '',
+      members: [],
       // teamName: 'Test',
       // members: [
       //   { id: 'u1', fullName: 'Max Schwarz', role: 'Engineer' },
@@ -29,6 +32,20 @@ export default {
       // ],
     };
   },
+
+  created() {
+    const teamId = this.$route.params.teamId;
+    const selectedTeam = this.teams.find(team => team.id === teamId);
+    const members = selectedTeam.members;
+    const selectedMembers = [];
+    for (const member of members) {
+      const selectedUser = this.users.find(user => user.id === member);
+      selectedMembers.push(selectedUser);
+      this.members = selectedMembers;
+      this.team = selectedTeam.name;
+    }
+
+  }
 };
 </script>
 
