@@ -1,4 +1,4 @@
-<template>
+ <template>
   <section>
     <h2>{{ teamName }}</h2>
     <ul>
@@ -23,6 +23,10 @@ export default {
   },
   data() {
     return {
+<<<<<<< HEAD
+=======
+
+>>>>>>> ab8c91cd019bf4383d7aff1c78a6f5d402521765
       teamName: '',
       members: [],
       // teamName: 'Test',
@@ -32,6 +36,7 @@ export default {
       // ],
     };
   },
+<<<<<<< HEAD
   methods: {
     loadTeamMembers(teamId) {
       const selectedTeam = this.teams.find(team => team.id === teamId);
@@ -55,6 +60,22 @@ export default {
   }
 
 
+=======
+
+  created() {
+    const teamId = this.$route.params.teamId;
+    const selectedTeam = this.teams.find(team => team.id === teamId);
+    const members = selectedTeam.members;
+    const selectedMembers = [];
+    for (const member of members) {
+      const selectedUser = this.users.find(user => user.id === member);
+      selectedMembers.push(selectedUser);
+      this.members = selectedMembers;
+      this.team = selectedTeam.name;
+    }
+
+  }
+>>>>>>> ab8c91cd019bf4383d7aff1c78a6f5d402521765
 };
 </script>
 
